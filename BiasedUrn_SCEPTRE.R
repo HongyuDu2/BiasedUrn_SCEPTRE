@@ -1,4 +1,4 @@
-#Packages
+# Packages
 library(dplyr)
 library(MASS)
 library(ggplot2)
@@ -13,16 +13,16 @@ Big_P2 <- c()
 
 for (m in 1:20){
   #Creation of parameters and data
-  num_cells <- 23
+  num_cells <- 23 
   grna_avg_prob = 0.1
   size = 1
   reps = 1
   mean_expression = 5
-  grna_effect = 0.6
+  grna_effect = 0.6 
   zero_inflation = 0
-  B = 500
+  B = 500 ## number of bootstrape
   All_Pvalues = numeric(reps)
-  Z <- rnorm(num_cells)
+  Z <- rnorm(num_cells) ## Confounding 
   pi_true <-  1 / (1 + exp(-(grna_avg_prob + 0.9*Z)))
   X <- rbinom(n = num_cells, size = 1, prob = pi_true)
   Y <- rnbinom(n = num_cells,
